@@ -43,6 +43,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
 }
 
+::placeholder {
+    color: #999999;
+}
+
 /* potential additions to global styles: text-align center, uppercase, section padding */
 
 /* index page styles */
@@ -70,23 +74,57 @@ nav .mainRight {
 nav li {
     float: left;
     padding: 15px;
-    width: 
+    font-family: "Montserrat", sans-serif;
+    position: relative;
 }
 
 nav li a {
     font-size: 1.4rem;
 }
 
+nav li a::before, nav li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 1.5px;
+  top: 50%;
+  margin-top: -0.5px;
+  background: #000;
+}
+
+nav li a::before {
+  left: -2.5px;
+}
+nav li a::after {
+  right: 2.5px;
+  background: #000;
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+nav li a:hover:before {
+  background: #000;
+  width: 100%;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+nav li a:hover:after {
+  background: transparent;
+  width: 100%;
+  transition: 0s;
+}
+
 nav .logo {
+    
     font-size: 3.75rem;
-    width: 30%;
+    width: 15%;
     position: absolute;
-    left: 50%;
+    left: 45%;
     right: 50%;
     top: 15px;
     margin: 0;
     padding: 0;
     transform: translateX(-25%);
+    font-weight: 700;
 }
 
 .shoppingLink {
@@ -486,10 +524,10 @@ footer h6 {
 }
 
 /* related posts image */
-.relatedPosts h3 {
+.relatedPosts h3, .comments h3, .contactForm h3 {
     font-size: 2.4rem;
     font-weight: 700;
-    border-bottom: solid 1px  #999999;
+    border-bottom: solid 0.5px #999999;
     padding-bottom: 10px;
     margin-bottom: 40px;
 }
@@ -508,3 +546,207 @@ footer h6 {
 .comments {
     clear:both;
 }
+
+.comments img {
+    float: left;
+    width: 50px;
+    height: 50px;
+}
+
+.comments .commentContainer {
+    background: #f6f6f6;
+    width: calc(100% - 80px);
+    float: left;
+    margin-bottom: 20px;
+    margin-left: 25px;
+    padding: 10px 0 25px 20px;
+    position: relative;
+}
+
+.comments .commentContainer::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 22%;
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-right-color: #f6f6f6;
+	border-left: 0;
+	margin-top: -10px;
+    margin-left: -13px;
+    /* border: 15px solid;
+    border-color: cyan transparent transparent cyan; */
+    border-right-width: 15px;
+}
+
+.comments .commentContainer h5 {
+    color: #333333;
+    font-size: 1.1rem;
+    padding: 0;
+    margin: 0;
+}
+
+.comments .commentContainer p {
+    color: #666666;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 5px 0;
+
+} 
+
+.comments .commentContainer h6 {
+    color: #999999;
+    font-size: 0.9rem;
+    text-transform: none;
+    margin: 0;
+    
+}
+
+.comments .commentContainer .replyComment {
+    color: #405e31;
+    font-style: italic;
+    text-transform: none;
+    font-size: 1rem;
+}
+
+.contactForm {
+   padding-bottom: 130px;
+   clear:both;
+}
+
+.contactForm input {
+    width: calc(33% - 10px);
+    display: inline-block;
+    border: none;
+    border-bottom: solid 0.5px #999999;
+    padding-bottom: 10px;
+    margin: 5px;
+}
+
+.contactForm input[id="comment"] {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 100px;
+    line-height: 30px;
+}
+
+input::-webkit-input-placeholder {
+    color: #999;
+    font-size: 1.1rem;
+}
+
+input:hover::-webkit-input-placeholder {
+    color: black;
+}
+
+input::-moz-placeholder {
+    color: #999;
+    font-size: 1.1rem;
+}
+
+input:hover::-moz-placeholder {
+    color:black;
+}
+
+input:hover {
+    border-bottom: 1px solid black;
+}
+
+input:focus{
+    border-bottom: 1px solid black;
+}
+
+.contactForm button  {
+    border: none;
+    border-bottom: 1px solid #999999;
+    padding: 40px 0 5px 0;
+    background: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    padding-top: 40px;
+
+}
+
+/* contact page */
+.bannerPhoto {
+    background: url(assets/contact-1.jpeg) no-repeat;
+    background-size: cover;
+    height: 160px;
+    clear:both;
+}
+
+.details {
+    position: relative;
+    padding: 100px 0;
+}
+
+.details h2 {
+    font-size: 45px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    letter-spacing: 1.2px;
+    position: absolute;
+    top: -75px;
+    left: 280px;
+    width: 20%;
+}
+
+.details .wrapper > p {
+    width: 50%;
+    padding-bottom: 40px;
+    color: #999999;
+}
+
+.details .contactInfo {
+    padding-bottom: 30px;
+    
+}
+
+.details .contactInfo h4 {
+    font-size: 1.2rem;
+    letter-spacing: 1.2px;
+}
+
+.details .contactInfo div {
+    width: 33%;
+    float: left;
+    line-height: 1;
+    padding: 30px 0 30px 30px;
+    height: 175px;
+}
+
+details .contactInfo div > p {
+    color: #999999;
+}
+
+.details .contactInfo div:nth-of-type(1), div:nth-of-type(2) {
+    border-right: 1px solid black;
+   
+}
+
+.details .contactInfo i {
+    font-size: 30px;
+}
+
+.details h3, .contactForm .wrapper .getInTouch {
+    font-size: 1.4rem;
+    font-weight: normal;
+
+    /* font-weight: 700; */
+}
+
+
+
+
+
+
+
+
+
+
+
+

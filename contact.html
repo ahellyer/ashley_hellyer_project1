@@ -8,13 +8,13 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <header>
+    <header class="contactPage">
         <div class="wrapper">
             <nav>
-                <ul>
+                <ul class="mainLeft">
                     <li>
                         <a href="index.html">home</a>
                     </li>
@@ -24,9 +24,8 @@
                     <li>
                         <a href="">portfolio</a>
                     </li>
-                    <li class='logo'>
-                        <a href="">creative</a>
-                    </li>
+                </ul>
+                <ul class="mainRight">
                     <li>
                         <a href="">shop</a>
                     </li>
@@ -39,22 +38,26 @@
                         </a>
                     </li>
                     <li class='bag'>
-                        <a href="">
+                        <a href="" class="shoppingLink">
                             <i class="fas fa-shopping-bag"></i>
-                            <div class="shoppingNumber">2</div>
+                            <div class="shoppingNumber">
+                                <p>2</p>
+                            </div>
                         </a>
                     </li>
                 </ul>
+                <h1 class='logo'>creative</h2>   
             </nav>
         </div>
     </header>
-    <img src="assets/contact-1.jpeg" alt="">
-    <h1>contact us</h1>
+    <section class="bannerPhoto"></section>
+   
     <section class="details">
+        <h2>contact us</h2>
         <div class="wrapper">
             <h3>contact details</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nobis odit optio et consectetur? Odio inventore facere itaque odit nihil!</p>
-            <div class="contactInfo">
+            <div class="contactInfo clearfix">
                 <div class="phone">
                     <i class="fas fa-mobile-alt"></i>
                     <h4>phone</h4>
@@ -75,23 +78,25 @@
             </div>
         </div>
     </section>
-    <section class="contactForm">
-        <h3>get in touch with us</h3>
-        <p>If you have any questions, please don't hesitate to send us a message</p>
-        <form action="">
-            <input type="text" name="" id=""value="Enter your name...">
-            <input type="email" value="youremail@domain.com">
-            <input type="text" name="" id="" value="Subject(Optional)">
-            <input type="text" name="" id="" value="Here goes your message">
-            <button>send message</button>
-        </form>
+    <section class="contactForm clearfix">
+        <div class="wrapper clearfix">
+            <h3 class="getInTouch">get in touch with us</h3>
+            <p>If you have any questions, please don't hesitate to send us a message</p>
+            <form action="">
+                <input type="text" name="" id=""value="Enter your name...">
+                <input type="email" value="youremail@domain.com">
+                <input type="text" name="" id="" value="Subject(Optional)">
+                <input type="text" name="" id="" value="Here goes your message">
+                <button>send message</button>
+            </form>
+        </div>
     </section>
     <section>
         <img src="assets/contact-2.jpeg" alt="">
     </section>
     <footer>
-        <div class="wrapper">
-            <div>
+        <div class="wrapper clearfix">
+            <div class="footerContainer contactUs">
                 <h2>contact us</h2>
                 <ul>
                     <li>6591 Orchard Street, Toronto, Ontario</li>
@@ -100,14 +105,13 @@
                     <li>Phone 02: 345 678 9101</li>
                     <li>Fax: 643 6543 898</li>
                 </ul>
-                <div>
-                    <!-- insert facebook twitter insta icons -->
+                <div class="socialIcons">
                     <i class="fab fa-facebook-f"></i>
                     <i class="fab fa-twitter"></i>
                     <i class="fab fa-instagram"></i>
                 </div>
             </div>
-            <div>
+            <div class="footerContainer recentPosts">
                 <h2>recent posts</h2>
                 <ul>
                     <li>Conversion hackathon partner</li>
@@ -117,15 +121,18 @@
                     <li>Infographic learning curve</li>
                 </ul>
             </div>
-            <div>
+            <div class="footerContainer subscribe">
                 <h2>Subscribe now</h2>
                 <p>Signup for emails and notifications below.</p>
                 <form action="">
-                    <input type="email">
-                    <button>need an arrow symbol here</button>
+                    <input type="email" value="Enter your email">
+                    <button>
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </button>
                 </form>
             </div>
         </div>
+        <h6>creative agency</h6>
     </footer>
 </body>
 </html>
