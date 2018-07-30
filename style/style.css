@@ -97,9 +97,17 @@ nav .mainLeft li:nth-of-type(1) {
 nav .mainRight li {
     float: left;
     text-align: right;
-    padding: 15px;
+    padding: 15px 0 15px 15px;
     font-family: "Montserrat", sans-serif;
     position: relative;
+}
+
+nav .mainRight li:nth-of-type(1), nav .mainRight li:nth-of-type(2) {
+    width: 35%;
+}
+
+nav .mainRight li:nth-of-type(3), nav .mainRight li:nth-of-type(4) {
+    width: 15%;
 }
 
 nav li a {
@@ -147,7 +155,7 @@ nav .logo {
     font-size: 3rem;
     position: absolute;
     left: 47%;
-    top: 15px;
+    top: 30px;
     margin: 0;
     padding: 0;
     transform: translateX(-25%);
@@ -170,8 +178,7 @@ nav .logo {
     font-size: 0.7rem;
     text-align: center;
     top: 10px;
-    left: 8px;
-    
+    left: 15px;
 } 
 
 .shoppingNumber p {
@@ -180,7 +187,6 @@ nav .logo {
     text-align: center;
     top: calc(50% - 7px);
     position: relative;
-    /* border-radius: 50%; */
 }
 
 /* branding section */
@@ -575,6 +581,10 @@ footer h6 {
     padding: 100px 0;
 }
 
+.blogPost span {
+    color: #333333;
+}
+
 .blogPost p {
     color: #999999;
     font-size: 1.1rem;
@@ -588,7 +598,7 @@ footer h6 {
 }
 
 .articleTagline {
-    border-bottom: 1px solid #999999;
+    border-bottom: 0.5px solid #999999;
     margin: 0;
     padding: 0;
 }
@@ -609,7 +619,6 @@ footer h6 {
 
 .articleTagline .admin {
     width: 47%;
-   
 }
   
 .articleTagline li h3, .articleTagline li p {
@@ -624,7 +633,7 @@ footer h6 {
 .blogPost .boldParagraph {
     font-weight: bold;
     color: black;
-    padding-top: 50px;
+    padding-top: 40px;
     
 }
 
@@ -730,12 +739,16 @@ footer h6 {
 }
 
 .contactForm input {
-    width: calc(33% - 10px);
+    width: calc(33% - 6.5px);
     display: inline-block;
     border: none;
     border-bottom: solid 0.5px #999999;
     padding-bottom: 10px;
-    margin: 5px;
+    margin-left: 10px;
+}
+
+.contactForm input:nth-of-type(1), .contactForm input:nth-of-type(4) {
+    margin-left: 0;
 }
 
 .contactForm input[id="comment"] {
@@ -860,10 +873,16 @@ details .contactInfo div > p, .contactForm p {
 
 .details h3, .contactForm .wrapper .getInTouch {
     font-size: 1.4rem;
-    font-weight: normal;
-
-    /* font-weight: 700; */
+    font-weight: bold;
+    border: none;
+    margin-bottom: 15px;
+    padding-bottom: 0;
 }
+
+.contactForm p {
+    padding-bottom: 80px;
+}
+
 
 
 
