@@ -4,7 +4,10 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-/* global styles */
+.visuallyhidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
+
+
+/* GLOBAL STYLES */
 html {
     font-size: 62.5%;
 }
@@ -24,6 +27,10 @@ a {
     text-decoration: none;
     color: #000000;
     text-transform: uppercase;
+}
+
+p {
+    color: #999999;
 }
 
 .wrapper {
@@ -60,27 +67,50 @@ h1, h2, h3, h4, h5, h6 {
 
 nav {
     padding-top: 30px;
+    
 }
 
 nav .mainLeft {
     width: 40%;
     float: left;
+    padding: 0;
 }
 
 nav .mainRight {
     width: 40%;
     float: right;
+    padding: 0;
+    padding-left: 110px;
+   
 }
-nav li {
+nav .mainLeft li {
     float: left;
     padding: 15px;
     font-family: "Montserrat", sans-serif;
     position: relative;
 }
 
-nav li a {
-    font-size: 1.4rem;
+nav .mainLeft li:nth-of-type(1) {
+    padding-left: 0;
 }
+
+nav .mainRight li {
+    float: left;
+    text-align: right;
+    padding: 15px;
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+}
+
+nav li a {
+    font-size: 1.1rem;
+}
+
+nav li a i {
+    font-size: 1.5rem;
+}
+
+/* nav - animated line on hover */
 
 nav li a::before, nav li a::after {
   content: '';
@@ -114,12 +144,9 @@ nav li a:hover:after {
 }
 
 nav .logo {
-    
-    font-size: 3.75rem;
-    width: 15%;
+    font-size: 3rem;
     position: absolute;
-    left: 45%;
-    right: 50%;
+    left: 47%;
     top: 15px;
     margin: 0;
     padding: 0;
@@ -127,19 +154,33 @@ nav .logo {
     font-weight: 700;
 }
 
+/* shopping cart number styling */
+
 .shoppingLink {
     position: relative;
-}
+    display:block;
+} 
 .shoppingNumber {
     position: absolute;
     background: #c3dab7;
-    padding: 5px;
+    padding: 4px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-}
+    font-size: 0.7rem;
+    text-align: center;
+    top: 10px;
+    left: 8px;
+    
+} 
 
 .shoppingNumber p {
     font-size: 0.8rem;
     margin: 0;
+    text-align: center;
+    top: calc(50% - 7px);
+    position: relative;
+    /* border-radius: 50%; */
 }
 
 /* branding section */
@@ -155,15 +196,15 @@ nav .logo {
     display: block;
     position: absolute;
     z-index: 1;
-    left: 723px;
+    left: 50%;
     top: -70px;
-    bottom: 650px;
+    bottom: 500px;
     border: 1px solid;
     border-width: 0 0 0 1px;
 }
 
 .brandingImg {
-    width: 60%;
+    width: 40%;
     margin: 0 auto;
 }
 
@@ -174,14 +215,14 @@ nav .logo {
 
 .branding .textOverlay {
     position: absolute;
-    width: 200px;
-    height: 200px;
-    left: 400px;
-    top: 60px;
+    width: 185px;
+    height: 185px;
+    left: 469px;
+    top: 83px;
 }
 
 .brandingContainer {
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
 }
 
@@ -189,7 +230,12 @@ nav .logo {
     width: 50%;
     float: left;
     text-align: center;
-    padding: 30px;
+    padding: 40px 20px;
+}
+
+.brandingContainer div p {
+    font-size: 1.2rem;
+    color: black;
 }
 
 /* carousel section */
@@ -203,24 +249,31 @@ nav .logo {
 }
 
 .fa-angle-left, .fa-angle-right {
-    font-size: 2rem;
+    font-size: 4rem;
+    color: #999999;
+}
+
+.fa-angle-left:hover, .fa-angle-right:hover {
+    color: black;
+    cursor: pointer;
 }
 
 
 .fa-angle-left {
     position: absolute;
     left: 0;
-    top: 50%;
+    top: 50%;  
 }
 
 .fa-angle-right {
     position: absolute;
     right: 0;
     top: 50%;
+   
 }
 
 .carouselImg {
-    width: 30%;
+    width: 24%;
     margin: 0 auto;
 }
 
@@ -231,30 +284,37 @@ nav .logo {
 }
 
 .carousel p {
-    width: 60%;
+    width: 75%;
     margin: 0 auto;
     text-align: center;
     padding: 20px;
-
+    font-family: 'Open Sans';
+    font-style: italic;
+    line-height: 2;
+    font-size: 1.2rem;
+    color: #888888;
+    font-weight: 400;
+    letter-spacing: 0.6px;
 }
 
 /* feactures section */
 .features {
     background: url(assets/home-4.jpeg) no-repeat;
-    padding: 145px 0;
-    background-size: cover;
+    padding: 145px 0 85px 0;
+    background-size: contain;
 }
 
 .features ul {
     float: right;
     width: calc(55% - 120px);
     margin-left: 0;
-    margin-right: 120px;
+    margin-right: 90px;
 }
 
 .features li {
     float: left;
     width: 50%;
+    padding-bottom: 50px;
 }
 
 .features li .listIcon {
@@ -263,25 +323,29 @@ nav .logo {
    height: 50px;
    margin: 5px;
    border-radius: 50%;
-   border: 1px solid black;
+   border: 1.5px solid black;
    text-align: center;
    vertical-align: middle;
-   /* set specific height and width of div that holds the icon */
-  
-
 }
 
 .features li .listIcon i {
     font-size: 2rem;
     position:relative;
     top: calc(50% - 11px);
-   
 }
 
 .features li .listFeature {
     float: left;
     width: 74%;
-    padding-left: 30px;
+    padding-left: 20px;
+}
+
+.features li .listFeature h2 {
+    margin-top: 0;
+}
+
+.features li .listFeature p {
+    color: #999999;
 }
 /* team section */
 .team {
@@ -289,7 +353,7 @@ nav .logo {
     position: relative;
 }
 
-.team h2 {
+.team h1 {
     text-align: center;
 }
 .team .gallery div {
@@ -301,20 +365,25 @@ nav .logo {
     width: calc(50% - 20px);
     background: #f6f6f6;
     height: 195px;
-    padding-top: 40px;
-    padding-left: 20px;
+    padding: 50px 30px 0 30px;
     text-align: left; 
 }
 
-.team .teamPlayer h2 {
+.team .teamPlayer p {
+    font-size: 1.1rem;
+}
+
+.team h4 {
     text-align: left;
+    font-size: 1.4rem;
+    margin-bottom:0;
 }
 
 .team .galleryContainer {
     width: calc(25% - 20px);
 }
 
-.team .galleryContainer h2 {
+.team .galleryContainer h4 {
     text-align: center;
     padding: 50px;
 }
@@ -325,10 +394,11 @@ nav .logo {
     position: absolute;
     z-index: 1;
     left: 723px;
-    top: -70px;
-    bottom: 862px;
-    border: 1px solid;
-    border-width: 0 0 0 1px;
+    top: 0;
+    bottom: 90%;
+    border: 0.5px solid;
+    color: #999999;
+    border-width: 0 0 0 0.5px;
 }
 
 
@@ -338,22 +408,28 @@ nav .logo {
     background: #c3dab7;
 }
 
-.portfolio div {
+.portfolio h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.portfolio .viewPortfolio, .portfolio .portfolioImg {
     float: left;
     width: 50%;
 }
 
-.portfolioImg {
-    height: auto;
-}
-
 .portfolio .viewPortfolio {
-    padding: 265px 100px;
+    padding: 250px 75px 0 75px ;
     text-align: center;
 }
 
 .portfolio p {
-    padding-bottom: 20px;
+    padding-bottom: 40px;
+    width: 65%;
+    margin: 0 auto;
+    text-align: center;
+    color: #777777;
+    font-size: 1.1rem;
 }
 
 .portfolio a {
@@ -361,7 +437,9 @@ nav .logo {
     margin: 0 auto;
     border: 1px solid white;
     background: white;
-    padding: 10px 20px;
+    padding: 15px 30px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
     
 }
 
@@ -369,24 +447,35 @@ nav .logo {
 footer {
     clear: both;
     background:  #333333;
-    color: #ffffff;
-    padding: 100px 0;
+    color: #f6f6f6;
+    padding-top: 100px;
 }
 
 footer .wrapper {
-    padding-bottom: 50px;
+    padding-bottom: 100px;
 }
 
 footer .footerContainer {
     float: left;
-    width: calc(33% - 40px);
-    margin: 20px;
+    width: 33.33%;
+    
 }
 
 footer .footerContainer ul {
     margin: 0;
     padding: 0;
-    list-style-position: inside; 
+    list-style-position: none; 
+    list-style-type: none;
+}
+
+footer ul li {
+    font-size: 1.1rem;
+    letter-spacing: 0.8px;
+    list-style-type: none;
+}
+
+footer h2 {
+    padding-bottom: 20px;
 }
 
 footer .socialIcons {
@@ -396,6 +485,8 @@ footer .socialIcons {
 
 footer .socialIcons i{
     padding-right: 20px;
+    color:white;
+    font-size: 1.2rem;
 }
 
 footer .contactUs {
@@ -409,40 +500,66 @@ footer .recentPosts{
 footer .recentPosts li{
     text-align: left;
     padding-left: 40px;
-    list-style-type: disc;
     line-height: 2.5;
 }
 
 footer .subscribe{
     text-align: right;
+    
+}
+
+footer .subscribe p {
+    color: white;
+    font-size: 1.1rem;
+}
+
+footer form {
+    padding-top: 15px;
 }
 
 footer input {
     border: none;
-    height: 20px;
     margin: 0;
+    padding: 10px 0;
 }
 
-footer button {
+footer input[type=email] {
+    width: 150px;
+    margin-right: -3px;
+    padding-left: 15px;
+}
+
+footer input[type=email]::placeholder {
+    padding-left: 15px;
+    
+}
+
+footer input[type=submit] {
     font-size: 1rem;
-    background: #c3dab7;
-    border: none;
-    height: 20px;
-    margin: 0;
+    background-image: url(assets/long-arrow-alt-right-solid.svg);
+    background-color: #c3dab7;
+    width: 35px;
+    background-size: 30%;
+    background-position: center;
+    background-repeat: no-repeat; 
+}
+
+footer input[type=submit]:hover {
+    cursor: pointer;
 }
 
 footer h6 {
     clear: both;
     text-align: center;
-    border-top: 0.5px white solid;
-    letter-spacing: 2px;
+    border-top: 0.5px #666666 solid;
+    letter-spacing: 3px;
     font-size: 1.4rem;
-    padding-top: 100px;
+    padding: 50px 0;
     margin: 0;
 }
 
 
-/* blog page styles */
+/* BLOG page styles */
 
 .blogPage {
     background: url(assets/blog-1.jpeg);
@@ -494,7 +611,7 @@ footer h6 {
     width: 47%;
    
 }
-
+  
 .articleTagline li h3, .articleTagline li p {
     margin: 0;
     padding-top: 0;
@@ -543,6 +660,7 @@ footer h6 {
     margin-right: 20px;
 }
 
+/* comments section */
 .comments {
     clear:both;
 }
@@ -575,8 +693,6 @@ footer h6 {
 	border-left: 0;
 	margin-top: -10px;
     margin-left: -13px;
-    /* border: 15px solid;
-    border-color: cyan transparent transparent cyan; */
     border-right-width: 15px;
 }
 
@@ -592,7 +708,6 @@ footer h6 {
     font-family: "Montserrat", sans-serif;
     margin: 0;
     padding: 5px 0;
-
 } 
 
 .comments .commentContainer h6 {
@@ -600,7 +715,6 @@ footer h6 {
     font-size: 0.9rem;
     text-transform: none;
     margin: 0;
-    
 }
 
 .comments .commentContainer .replyComment {
@@ -666,14 +780,13 @@ input:focus{
     letter-spacing: 1px;
     font-size: 1.1rem;
     padding-top: 40px;
-
 }
 
 /* contact page */
 .bannerPhoto {
     background: url(assets/contact-1.jpeg) no-repeat;
     background-size: cover;
-    height: 160px;
+    height: 170px;
     clear:both;
 }
 
@@ -695,6 +808,15 @@ input:focus{
     width: 20%;
 }
 
+.details h2::before {
+    content: "";
+    width: 30px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    top: -30px;
+}
+
 .details .wrapper > p {
     width: 50%;
     padding-bottom: 40px;
@@ -703,28 +825,32 @@ input:focus{
 
 .details .contactInfo {
     padding-bottom: 30px;
+    margin-left: 20px;
     
 }
 
 .details .contactInfo h4 {
-    font-size: 1.2rem;
-    letter-spacing: 1.2px;
+    font-size: 1.1rem;
+    letter-spacing: 5px;
+    font-weight: 700;
+    color: #333333;
 }
 
 .details .contactInfo div {
-    width: 33%;
+    width: calc(33% - 26.66px);
     float: left;
     line-height: 1;
     padding: 30px 0 30px 30px;
     height: 175px;
 }
 
-details .contactInfo div > p {
+details .contactInfo div > p, .contactForm p {
     color: #999999;
 }
 
-.details .contactInfo div:nth-of-type(1), div:nth-of-type(2) {
-    border-right: 1px solid black;
+.details .contactInfo .phone, .details .contactInfo .address {
+    border-right: 0.5px solid #999999;
+    margin-right: 40px;
    
 }
 
