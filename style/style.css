@@ -198,6 +198,7 @@ nav .logo {
 .brandingImg {
     width: 40%;
     margin: 0 auto;
+    position: relative;
 }
 
 .branding img {
@@ -209,8 +210,8 @@ nav .logo {
     position: absolute;
     width: 185px;
     height: 185px;
-    left: 469px;
-    top: 83px;
+    left: -75px;
+    top: -75px;
 }
 
 .brandingContainer {
@@ -533,6 +534,7 @@ footer input[type=submit] {
     background-size: 30%;
     background-position: center;
     background-repeat: no-repeat; 
+
 }
 
 footer input[type=submit]:hover {
@@ -871,6 +873,41 @@ details .contactInfo div > p, .contactForm p {
 
 .contactForm p {
     padding-bottom: 80px;
+}
+
+@media (max-width: 1280px) {
+    footer form {
+        position: relative;
+    }
+
+    footer input [type=email] {
+        margin-right: 25px;
+    }
+    footer input[type=submit] {
+        position:absolute;
+        right:-2px;
+    }
+
+    .team .teamPlayer {
+    height: 185px;
+    
+    }
+    .features li {
+        padding-bottom: 15px;
+    }
+
+    .team::before {
+        left: 50%;
+    }
+
+    .features {
+        padding: 145px 0 40px 0;
+    }
+
+    nav .mainRight {
+        padding-left: 100px;
+    }
+
 }
 
 
